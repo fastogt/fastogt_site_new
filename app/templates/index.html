@@ -51,26 +51,13 @@
 </header>
 
 <main>
-    <!--Section About and buttons 'sign in', 'register'-->
+    <!--Section About-->
     <section id="about-main" class="vertical-align">
         <div class="container">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-xs-12 col-sm-8 col-md-7">
-                    <h1>We believe in our founders</h1>
-                    <p class="about-description">We help to develop, advise and invest in the most promising projects.
-                        If you have cool ideas - you are welcome!</p>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3 main-buttons">
-                    <a class="btn btn-block" href="{{ url_for('home.register') }}"><span
-                            class="glyphicon glyphicon-user"></span> {% trans %}Register{% endtrans %}</a>
-                    <a class="btn btn-block" href="{{ url_for('home.login') }}"><span
-                            class="glyphicon glyphicon-log-in"></span> {% trans %}Sign in{% endtrans %}</a>
-                    <p class="conditions text-center">By clicking “Register”, you agree to our <a
-                            href="{{ url_for('home.term_of_use') }}">Term
-                        of use</a> and <a href="{{ url_for('home.private_policy') }}">Private policy</a>.</p>
-                </div>
-                <div class="col-md-1"></div>
+            <div class="jumbotron text-center">
+                <h1>We believe in our founders</h1>
+                <p class="about-description">We help to develop, advise and invest in the most promising projects.
+                    If you have cool ideas - you are welcome!</p>
             </div>
         </div>
     </section>
@@ -155,13 +142,11 @@
     <section id="team" class="vertical-align text-center">
         <div class="container">
             <h1>Our team</h1>
-            <div class="jumbotron text-center">
-                <div class="text-center">
-                    <img src="{{ url_for('static', filename='assets/images/ceo.jpg') }}" alt="Image">
-                    <h3><b>Topilski Alexandr</b></h3>
-                    <p class="post"><i>CEO and Founder</i></p>
-                    <p>C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL applications.</p>
-                </div>
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='assets/images/ceo.jpg') }}" alt="Image">
+                <h3><b>Topilski Alexandr</b></h3>
+                <p class="post"><i>CEO and Founder</i></p>
+                <p>C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL applications.</p>
             </div>
         </div>
     </section>

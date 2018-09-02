@@ -107,31 +107,6 @@ section {
     align-items: center;
 }
 
-#about-main .row h1 {
-    margin-bottom: 15px !important;
-}
-
-.about-description {
-    font-size: 20px !important;
-    line-height: 2.5rem;
-}
-
-#about-main .btn, #participate .btn {
-    padding: 10px 0 !important;
-    margin: 30px 0 30px !important;
-    background-color: rgb(255, 133, 10);
-    color: white;
-    font-weight: bold !important;
-}
-
-.glyphicon {
-    font-size: 13px;
-}
-
-#about-main .btn:hover {
-    background-color: rgb(255, 152, 48);
-}
-
 .main-buttons {
     padding-left: 70px;
     padding-right: 70px;
@@ -194,8 +169,8 @@ hr {
 }
 
 #team img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
 }
 

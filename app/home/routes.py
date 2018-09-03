@@ -29,6 +29,13 @@ def flash_error(text: str):
     flash(text, 'danger')
 
 
+def send_email(email: str, subject: str, message: str):
+    config = app.config['PUBLIC_CONFIG']
+    msg = Message(subject, recipients=[config['support']['contact_email']])
+    msg.body = 'From: {0} <{0}> {1}'.format(email, message)
+    mail.send(msg)
+
+
 # routes
 
 @login_manager.user_loader
@@ -47,14 +54,11 @@ def contact():
     form = ContactForm()
 
     if request.method == 'POST':
-        if not form.validate():
+        if not form.validate_on_submit():
             flash('All fields are required.')
             return render_template('contact.html', form=form)
 
-        config = app.config['PUBLIC_CONFIG']
-        msg = Message(form.subject.data, recipients=[config['support']['contact_email']])
-        msg.body = 'From: {0} <{0}> {1}'.format(form.email.data, form.message.data)
-        mail.send(msg)
+        send_email(form.email.data, form.subject.data, form.message.data)
         return render_template('contact.html', success=True)
 
     elif request.method == 'GET':

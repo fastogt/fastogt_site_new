@@ -4,18 +4,18 @@ upstream app_http_server {
 
 server {
     listen 80;
-    server_name idealtrust.by;
-    access_log /var/log/nginx/idealtrust.log;
+    server_name fastogt.com;
+    access_log /var/log/nginx/fastogt.log;
     return 301 https://$server_name$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name www.idealtrust.by;
-    return 301 https://idealtrust.by$request_uri;
+    server_name www.fastogt.com;
+    return 301 https://fastogt.com$request_uri;
 
-    #ssl_certificate /etc/letsencrypt/live/idealtrust.by/fullchain.pem; # managed by Certbot
-    #ssl_certificate_key /etc/letsencrypt/live/idealtrust.by/privkey.pem; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/fastogt.com/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/fastogt.com/privkey.pem; # managed by Certbot
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
@@ -28,12 +28,12 @@ server {
 }
 
 server {
-    server_name idealtrust.by;
-    access_log /var/log/nginx/idealtrust.log;
+    server_name fastogt.com;
+    access_log /var/log/nginx/fastogt.log;
 
     listen 443 ssl;
-    #ssl_certificate /etc/letsencrypt/live/idealtrust.by/fullchain.pem; # managed by Certbot
-    #ssl_certificate_key /etc/letsencrypt/live/idealtrust.by/privkey.pem; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/fastogt.com/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/fastogt.com/privkey.pem; # managed by Certbot
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;

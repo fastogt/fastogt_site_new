@@ -5,7 +5,7 @@ from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 # load config 
 app.config.from_pyfile('public_config.py', silent=False)
@@ -29,3 +29,10 @@ from app.user import user as user_blueprint
 app.register_blueprint(user_blueprint, url_prefix='/user')
 
 login_manager.login_view = "home.login"
+
+
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+@app.route('/googlee08bc4f482dc3039.html')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])

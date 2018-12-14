@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory
+from flask import Flask, request, send_from_directory
 from flask_mongoengine import MongoEngine
 from flask_login import LoginManager
 from flask_mail import Mail

@@ -1,173 +1,493 @@
-{% extends 'layouts/layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}
-{{ config['PUBLIC_CONFIG'].site.title }}
-{% endblock %}
+<head>
 
-{% block styles %}
-{{ super() }}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/index.css') }}"/>
-{% endblock %}
+    <meta charset="utf-8">
 
-{% block content %}
-<header>
-    <!--Navigation-->
-    <nav class="navbar navbar-default navbar-fixed-top" id="main-top-navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#about-main"><!--<img
-                        src="{{ url_for('static', filename='assets/images/logo.png') }}">--><span>{{
-                    config['PUBLIC_CONFIG'].site.title }}</span></a>
-            </div>
-            <div class="navbar-collapse collapse navbar-right" id="navbar-top">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about">{% trans %}About{% endtrans %}</a></li>
-                    <li><a href="#what-we-do">{% trans %}What we do{% endtrans %}</a></li>
-                    <li><a href="#clients">{% trans %}Our Clients{% endtrans %}</a></li>
-                    <li><a href="#partners">{% trans %}Our Partners{% endtrans %}</a></li>
-                    <li><a href="#team">{% trans %}Team{% endtrans %}</a></li>
-                    <li><a href="{{ url_for('contact') }}">{% trans %}Contact{% endtrans %}</a></li>
+    <title>FastoGT</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Template Basic Images -->
+    <link rel="icon" href="../static/img/favicon.ico">
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">-->
+
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#234D64">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../static/fonts/icomoon/style.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../static/libs/reboot.min.css">
+    <link rel="stylesheet" href="../static/libs/hamburgers.css">
+    <link rel="stylesheet" href="../static/libs/slick-carousel/slick.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+
+<body>
+
+    <!-- ================================================================ preloader -->
+    <div class="preloader">
+        <div class="sk-double-bounce">
+            <div class="sk-child sk-double-bounce-1"></div>
+            <div class="sk-child sk-double-bounce-2"></div>
+        </div>
+    </div>
+
+    <!-- ================================================================ header -->
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="logo">
+                <img src="../static/img/logo.svg" alt="FastoGT">
+            </a>
+            <nav class="nav trans">
+                <ul class="menu" id="menu">
+                    <li><a class="menu__link" href="#services">Services</a></li>
+                    <li><a class="menu__link" href="#advantages">Advantages</a></li>
+                    <li><a class="menu__link" href="#projects">Projects</a></li>
+                    <li><a class="menu__link" href="#team">Team</a></li>
+                    <li><a class="menu__link" href="#contact">Contact</a></li>
+                    <li class="lang">
+                        <div class="lang__switch"></div>
+                        <span class="lang__span lang__span_selected">eng</span>
+                        <span class="lang__span lang__span_rus">rus</span>
+                    </li>
                 </ul>
-                <div class="dropdown pull-right">
-                    <a class="btn btn-default" data-toggle="dropdown">{% trans %}Language{% endtrans %} <b
-                            class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        {% for language in languages %}
-                        <li>
-                            <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[0] }}</a>
-                        </li>
-                        {% endfor %}
+                <div class="hamburger hamburger--spin">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================================================================ promo -->
+    <section class="wrap wrap_bg wrap_height-900">
+        <div class="inner">
+            <div class="promo-box">
+                <div class="promo-box__content">
+                    <h1 class="promo-box__h1">FastoGT - Software Development</h1>
+                    <p class="promo-box__p">Welcome, we are glad to see You! We design, develop, and support complex IT
+                        products based on different technologies. Team "Great Technology" works especially for you!</p>
+                </div>
+            </div>
+            <div class="promo-icon">
+                <span class="icon-rocket"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ services -->
+    <section id="services" class="wrap wrap_padding-top_130">
+        <div class="inner">
+            <div class="heading">
+                <h2 class="heading__h2">What can we do</h2>
+                <div class="heading__separator"></div>
+                <p class="heading__p">We provide services for the development of a full cycle of software for your
+                    business. Today IT is not a luxury but the basis of a stable, successful and effective work. </p>
+            </div>
+            <div class="services">
+                <div class="services__item">
+                    <div class="services__icon">
+                        <img src="../static/img/icon/sites.svg" alt="sites">
+                    </div>
+                    <h3 class="h3 services__h3">Services of sites development</h3>
+                    <p class="services__p">We provide services for the development of a full cycle of software for your
+                        business. Today IT is not a luxury but the basis of a stable, successful and effective work.
+                    </p>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__icon">
+                        <img src="../static/img/icon/software.svg" alt="sites">
+                    </div>
+                    <h3 class="h3 services__h3">Services for the development of system software</h3>
+                    <p class="services__p">Development and integration of software products to solve Your business
+                        problems.</p>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__icon">
+                        <img src="../static/img/icon/mobile.svg" alt="sites">
+                    </div>
+                    <h3 class="h3 services__h3">Services for mobile application development</h3>
+                    <p class="services__p">Applications for mobile devices are now part of everyday life of most
+                        people, so can be useful like other IT solutions.</p>
+                </div>
+
+                <div class="services__item">
+                    <div class="services__icon">
+                        <img src="../static/img/icon/promotion.svg" alt="sites">
+                    </div>
+                    <h3 class="h3 services__h3">Comprehensive services for the promotion of Your ideas</h3>
+                    <p class="services__p">"Save money on advertising — it's like that to stop the clock, trying to
+                        save time." Henry Ford.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ advantages -->
+    <section id="advantages" class="wrap wrap_bg wrap_theme_advatages">
+        <div class="inner">
+            <div class="heading heading_light">
+                <h2 class="heading__h2">Our advantages</h2>
+                <div class="heading__separator heading__separator_light"></div>
+            </div>
+            <div class="advantages">
+                <div class="advantages__item">
+                    <div class="advantages__text">
+                        <div class="h3 advantages__h3">You pay less for development</div>
+                        <div class="advantages__p">Lorem ipsum dolor sit ametf fgsdf, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor adfadv.</div>
+                    </div>
+                    <div class="advantages__icon">
+                        <span class="icon-shield"></span>
+                    </div>
+                </div>
+
+                <div class="advantages__item">
+                    <div class="advantages__text">
+                        <div class="h3 advantages__h3">We don't just write code for money!</div>
+                        <div class="advantages__p">We help to implement Your Ideas! Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit. Aenean commodo ligula.</div>
+                    </div>
+                    <div class="advantages__icon">
+                        <span class="icon-help"></span>
+                    </div>
+                </div>
+
+                <div class="advantages__item">
+                    <div class="advantages__text">
+                        <div class="h3 advantages__h3">You can directly work with top- notch specialists</div>
+                        <div class="advantages__p">Lorem ipsum dolor sit amet fdgdb, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor fgdffdd.</div>
+                    </div>
+                    <div class="advantages__icon">
+                        <span class="icon-puzzle"></span>
+                    </div>
+                </div>
+
+                <div class="advantages__item advatages__item_reverse">
+                    <div class="advantages__text">
+                        <div class="h3 advantages__h3">We apply original solutions and are not afraid of challenges</div>
+                        <div class="advantages__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                            commodo ligula eget
+                            dolor</div>
+                    </div>
+                    <div class="advantages__icon">
+                        <span class="icon-lightbulb"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ why us	 -->
+    <section class="wrap">
+        <div class="inner">
+            <div class="heading">
+                <h2 class="heading__h2">Why us?</h2>
+                <div class="heading__separator"></div>
+                <p class="heading__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, atque. Cumque
+                    animi velit voluptates vitae optio aut quos accusantium amet? </p>
+            </div>
+            <div class="why-us">
+                <div class="why-us__pic">
+                    <img src="../static/img/pic/tree.svg" alt="tree">
+                </div>
+                <div class="why-us__text">
+                    <p class="why-us__p">Now in the Internet there is quite a big choice of different organizations
+                        providing outsourcing services. Outsourcing (eng. outsourcing: out – external outside, source–
+                        source) is a complex of the actions directed on the transfer of enterprise specific processes
+                        and functions to another organization. We're not one of them, we work directly. Why You should
+                        forget about everyone else and choose our approach? If You value your time, money and nerves,
+                        you are making the right choice by entrusting your project to us. We offer:</p>
+                    <ul class="why-us__list">
+                        <li class="why-us__list-item">A team of professionals in different IT fields;</li>
+                        <li class="why-us__list-item">High quality service;</li>
+                        <li class="why-us__list-item">Guarantee that You won't find anywhere else;</li>
+                        <li class="why-us__list-item">Flexible pricing system.</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </nav>
-</header>
+    </section>
 
-<main>
-    <!--Section About-->
-    <section id="about-main" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>We believe in our founders</h1>
-                <p class="about-description">We help to develop, advise and invest in the most promising projects.
-                    If you have cool ideas - you are welcome!</p>
+    <!-- ================================================================ experience -->
+    <section class="wrap wrap_bg wrap_theme_experience">
+        <div class="inner">
+            <div class="experience">
+                <div class="experience__item">
+                    <div class="experience__icon">
+                        <span class="icon-brain"></span>
+                    </div>
+                    <p class="experience__number">7</p>
+                    <p class="experience__text">years of<br> development</p>
+                </div>
+                <div class="experience__item">
+                    <div class="experience__icon">
+                        <span class="icon-completed"></span>
+                    </div>
+                    <p class="experience__number">24</p>
+                    <p class="experience__text">Completed<br> projects</p>
+                </div>
+                <div class="experience__item">
+                    <div class="experience__icon">
+                        <span class="icon-code"></span>
+                    </div>
+                    <p class="experience__number">17359</p>
+                    <p class="experience__text">Lines of<br> code</p>
+                </div>
+                <div class="experience__item">
+                    <div class="experience__icon">
+                        <span class="icon-cofe"></span>
+                    </div>
+                    <p class="experience__number">7386</p>
+                    <p class="experience__text">Cups of<br> coffee</p>
+                </div>
             </div>
+
         </div>
     </section>
 
-    <!--Section About-->
-    <section id="about" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>We are the team of developers, tech-enthusiasts and investors.</h1>
-                <p>We invite enterprising people who need support in launching their business project. From us -
-                    training, consulting, support and investment for the most promising
-                    projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy, and a
-                    willingness to follow through.</p>
-                <div class="hr">
-                    <hr>
-                    <img src="{{ url_for('static', filename='assets/images/rocket.png') }}">
-                </div>
+    <!-- ================================================================ development < why us -->
+    <section class="wrap wrap_theme_development">
+        <div class="inner">
+            <div class="heading">
+                <h2 class="heading__h2">The development of your business</h2>
+                <div class="heading__separator"></div>
+                <p class="heading__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                    eget dolor. Aenean massa.</p>
             </div>
-        </div>
-    </section>
-
-    <!--Section What we do-->
-    <section id="what-we-do" class="vertical-align">
-        <div class="container">
-            <h1 class="text-center advantages-title">What we do</h1>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-xs-6 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-dev.png') }}">
-                    <h4>{% trans %}Help in developing{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-training.png') }}">
-                    <h4>{% trans %}Counseling and training{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-invest.png') }}">
-                    <h4>{% trans %}Investment of funds{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-legal-aid.png') }}">
-                    <h4>{% trans %}Legal aid{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-business.png') }}">
-                    <h4>{% trans %}Help in business matters{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-start.png') }}">
-                    <h4>{% trans %}Help in starting and maintenance{% endtrans %}</h4>
+            <div class="why-us development-why-us">
+                <div class="why-us__text">Great technology" is a team with unique solutions, each of which performs its
+                    task and reaches the goal. We don't operate like other companies. For each project we individually
+                    select and look for the most effective solutions. Our task is to develop the business of our
+                    customers and increase their profits. All work is developed only on the basis of these principles.</div>
+                <div class="why-us__pic">
+                    <img src="../static/img/pic/hand.jpg" alt="tree">
                 </div>
             </div>
         </div>
     </section>
 
-    <!--Section Clients-->
-    <section id="clients" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>Our clients</h1>
-                <p>We do not charge for our help. If you have an interesting project and want to show it to the world,
-                    and you are ready hard working, we are
-                    glad to invite you</p>
-                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Become our client{% endtrans %}</a>
+    <!-- ================================================================ projects -->
+    <section id="projects" class="wrap wrap_theme_projects">
+        <div class="inner">
+            <div class="heading heading_light">
+                <h2 class="heading__h2">Our projects</h2>
+                <div class="heading__separator heading__separator_light"></div>
+                <p class="heading__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                    eget dolor. Aenean massa.</p>
             </div>
-        </div>
-    </section>
-
-    <!--Section Partners-->
-    <section id="partners" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>Our partners</h1>
-                <p>We do not charge for our help. If you have an interesting project and want to show it to the world,
-                    and you are ready hard working, we are
-                    glad to invite you</p>
-                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Become our partners{% endtrans %}</a>
-            </div>
-        </div>
-    </section>
-
-    <!--Section Team-->
-    <section id="team" class="vertical-align text-center">
-        <div class="container">
-            <h1>Our team</h1>
-            <div class="text-center">
-                <img src="{{ url_for('static', filename='assets/images/ceo.jpg') }}" alt="Image">
-                <h3><b>Topilski Alexandr</b></h3>
-                <p class="post"><i>CEO and Founder</i></p>
-                <p>C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL applications.</p>
-            </div>
-        </div>
-    </section>
-</main>
-<footer>
-    <div class="container">
-        <div class="jumbotron text-center">
-            <p class="keep-left">Address: {{config['PUBLIC_CONFIG'].support.contact_address }}</p>
-            <p class="keep-left">Copyright © 2014-2018 FastoGT. All rights reserved.</p>
-            <p> Website development -
-                <a href="/">
-                    <img src="{{ url_for('static', filename='assets/images/fastogt.png') }}">
+            <div class="projects trans">
+                <a href="#" class="projects__link">
+                    <div class="projects__pic">
+                        <img src="../static/img/pic/redis.jpg" alt="">
+                    </div>
+                    <h3 class="h3 projects__h3">FastoRedis</h3>
+                    <p class="projects__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
                 </a>
-            </p>
-        </div>
-    </div>
-</footer>
-{% endblock %}
+                <a href="#" class="projects__link">
+                    <div class="projects__pic">
+                        <img src="../static/img/pic/nosql.jpg" alt="">
+                    </div>
+                    <h3 class="h3 projects__h3">FastoNoSQL</h3>
+                    <p class="projects__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
+                </a>
+                <a href="#" class="projects__link">
+                    <div class="projects__pic">
+                        <img src="../static/img/pic/nosql.jpg" alt="">
+                    </div>
+                    <h3 class="h3 projects__h3">FastoNoSQL</h3>
+                    <p class="projects__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
+                </a>
+                <a href="#" class="projects__link">
+                    <div class="projects__pic">
+                        <img src="../static/img/pic/nosql.jpg" alt="">
+                    </div>
+                    <h3 class="h3 projects__h3">FastoNoSQL</h3>
+                    <p class="projects__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
+                </a>
+                <a href="#" class="projects__link">
+                    <div class="projects__pic">
+                        <img src="../static/img/pic/nosql.jpg" alt="">
+                    </div>
+                    <h3 class="h3 projects__h3">FastoNoSQL</h3>
+                    <p class="projects__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
+                </a>
+                <a href="#" class="projects__link">
+                    <div class="projects__pic">
+                        <img src="../static/img/pic/nosql.jpg" alt="">
+                    </div>
+                    <h3 class="h3 projects__h3">FastoNoSQL</h3>
+                    <p class="projects__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
+                </a>
 
-{% block scripts %}
-{{ super() }}
-<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
-<script src="{{ url_for('static', filename='assets/js/jivosite.js') }}"></script>
-{% endblock %}
+
+            </div>
+            <div class="btn projects__btn trans">All projects</div>
+        </div>
+    </section>
+
+    <!-- ================================================================ testimonial -->
+    <section class="wrap">
+        <div class="inner">
+            <div class="heading">
+                <h2 class="heading__h2">Our clients say</h2>
+                <div class="heading__separator"></div>
+            </div>
+            <div class="testimonial trans">
+                <div class="testimonial-item">
+                    <div class="testimonial-item__photo">
+                        <img src="../static/img/photo/testimonial/Dix.jpg" alt="">
+                    </div>
+                    <div class="testimonial-item__text">
+                        <p class="testimonial-item__comment">First, I want to thank the "Great Technology" for the
+                            support they have given me! The program was made in one week, precisely, efficiently and
+                            inexpensively! </p>
+                        <p class="testimonial-item__author">Jonathan Smith</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-item__photo">
+                        <img src="../static/img/photo/testimonial/Karvounis.jpg" alt="">
+                    </div>
+                    <div class="testimonial-item__text">
+                        <p class="testimonial-item__comment">Worked on several of my projects and I am completely
+                            satisfied. Professional and prompt communication helped me to solve many problems and
+                            complete projects!</p>
+                        <p class="testimonial-item__author">Matthew Dix</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-item__photo">
+                        <img src="../static/img/photo/testimonial/Petrucci.jpg" alt="">
+                    </div>
+                    <div class="testimonial-item__text">
+                        <p class="testimonial-item__comment">You work directly with our employees and, therefore,
+                            prices for services are lower. Don't miss this unique opportunity. Do You have questions?</p>
+                        <p class="testimonial-item__author">Christopher Cambell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ team -->
+    <section id="team" class="wrap wrap_theme_team">
+        <div class="inner">
+            <div class="heading">
+                <h2 class="heading__h2">Our team</h2>
+                <div class="heading__separator"></div>
+                <p class="heading__p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
+                    eget dolor. Aenean massa.</p>
+            </div>
+            <div class="team">
+                <div class="team-item">
+                    <div class="team-item__photo">
+                        <img src="../static/img/photo/team/ceo.jpg" alt="">
+                    </div>
+                    <h3 class="h3 team-item__name">Topilski Alexandr</h3>
+                    <h4 class="team-item__post">CEO and Founder</h4>
+                    <p class="team-item__desc">C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL
+                        applications.</p>
+                    <ul class="team-item__socials">
+                        <li><a href="#" class="team-item__link"><span class="icon-twitter"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-facebook"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-linkedin"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-github"></span></a></li>
+                    </ul>
+                </div>
+                <div class="team-item">
+                    <div class="team-item__photo">
+                        <img src="../static/img/photo/team/ceo.jpg" alt="">
+                    </div>
+                    <h3 class="h3 team-item__name">Topilski Alexandr</h3>
+                    <h4 class="team-item__post">CEO and Founder</h4>
+                    <p class="team-item__desc">C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL
+                        applications.</p>
+                    <ul class="team-item__socials">
+                        <li><a href="#" class="team-item__link"><span class="icon-twitter"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-facebook"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-linkedin"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-github"></span></a></li>
+                    </ul>
+                </div>
+                <div class="team-item">
+                    <div class="team-item__photo">
+                        <img src="../static/img/photo/team/ceo.jpg" alt="">
+                    </div>
+                    <h3 class="h3 team-item__name">Topilski Alexandr</h3>
+                    <h4 class="team-item__post">CEO and Founder</h4>
+                    <p class="team-item__desc">C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL
+                        applications.</p>
+                    <ul class="team-item__socials">
+                        <li><a href="#" class="team-item__link"><span class="icon-twitter"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-facebook"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-linkedin"></span></a></li>
+                        <li><a href="#" class="team-item__link"><span class="icon-github"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ contact -->
+    <section id="contact" class="wrap wrap_bg wrap_theme_dark wrap_bg_theme_contact">
+        <div class="inner">
+            <div class="heading heading_light">
+                <h2 class="heading__h2">Contact us</h2>
+                <div class="heading__separator heading__separator_light"></div>
+            </div>
+            <form id="form" method="POST" action="http://">
+                <div class="form__group">
+                    <div class="form__inputs">
+                        <input type="text" name="name" placeholder="YOUR NAME*" required>
+                        <input type="email" name="email" placeholder="YOUR E-MAIL*" required>
+                        <input type="text" name="subject" placeholder="SUBJECT">
+                    </div>
+                    <textarea class="form__textarea" name="text" placeholder="YOUR MESSAGE*" required></textarea>
+                </div>
+                <input class="btn form__btn trans" type="submit" value="send message">
+            </form>
+        </div>
+        <div class="popup">
+            <p class="popup__success">Message sent</p>
+            <p class="popup__error">An error occured while sending a message. Try again</p>
+        </div>
+    </section>
+
+    <!-- ================================================================ footer -->
+    <footer class="wrap wrap_bg_theme_footer">
+        <div class="inner footer">
+            <p>Address: Republic of Belarus, Minsk, Stadionnay str. 5</p>
+            <p>Copyright &copy; 2014-2018 FastoGT. All rights reserved.</p>
+            <p>Website development - <span>FastoGT</span></p>
+        </div>
+    </footer>
+
+    <!-- ================================================================ scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        window.JQuery || document.write("<script src='../static/libs/jquery.min.js'><\/script>")
+    </script>
+    <script src="../static/libs/slick-carousel/slick.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

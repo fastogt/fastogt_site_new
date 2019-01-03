@@ -1,16 +1,36 @@
-{% extends 'layouts/layout.html' %}
-{% block title %}
-Page not found | {{ config['PUBLIC_CONFIG'].site.title }}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-<div class="container">
-    <div class="row">
-        <div class="well">
-            <h1>{% trans %}Page Not Found{% endtrans %}</h1>
-            <p>{% trans %}What you were looking for is just not there.{% endtrans %}</p>
-            <p><a href="{{ url_for('home.start') }}">{% trans %}go somewhere nice{% endtrans %}</a></p>
-        </div>
+<head>
+
+    <meta charset="utf-8">
+
+    <title>FastoGT</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Template Basic Images -->
+    <link rel="icon" href="../static/img/favicon.ico">
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">-->
+
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#234D64">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../static/libs/reboot.min.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+
+</head>
+
+<body class="page-404">
+    <div class="page-404__banner">
+        <p class="page-404__number">404</p>
+        <p class="page-404__text">Page not found</p>
+        <a class="page-404__link btn projects__btn" href="http://127.0.0.1:8080">Go to home page</a>
     </div>
-</div>
-{% endblock %}
+
+</body>
+
+</html>

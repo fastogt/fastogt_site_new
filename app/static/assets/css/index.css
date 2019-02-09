@@ -171,7 +171,7 @@ hr {
     color: rgb(75, 75, 75);
 }
 
-#team p {
+#team, #footer p {
     font-size: 18px;
     line-height: 27px;
     letter-spacing: 0.4px;

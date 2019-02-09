@@ -189,6 +189,12 @@ hr {
     border-radius: 100%;
 }
 
+#social img {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+}
+
 #advantages, #what-we-do, #team {
     color: rgb(75, 75, 75);
 }

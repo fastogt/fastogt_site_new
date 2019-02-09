@@ -194,7 +194,7 @@ hr {
     border-radius: 100%;
 }
 
-footer p {
+footer .jumbotron p {
     font-size: 18px;
     line-height: 27px;
     letter-spacing: 0.4px;

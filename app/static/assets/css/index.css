@@ -157,6 +157,10 @@ section {
     color: red;
 }
 
+.jumbotron p1 {
+    font-size: 23px;
+}
+
 hr {
     border-top: 1px solid rgb(220, 220, 220);
 }
@@ -192,8 +196,4 @@ hr {
     width: 32px;
     height: 32px;
     border-radius: 100%;
-}
-
-footer {
-  display: block;
 }

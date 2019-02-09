@@ -27,9 +27,8 @@
             <div class="navbar-collapse collapse navbar-right" id="navbar-top">
                 <ul class="nav navbar-nav">
                     <li><a href="#about">{% trans %}About{% endtrans %}</a></li>
-                    <li><a href="#what-we-do">{% trans %}What we do{% endtrans %}</a></li>
+                    <li><a href="#how_we_work">{% trans %}How we work?{% endtrans %}</a></li>
                     <li><a href="#clients">{% trans %}Our Clients{% endtrans %}</a></li>
-                    <li><a href="#partners">{% trans %}Our Partners{% endtrans %}</a></li>
                     <li><a href="#team">{% trans %}Team{% endtrans %}</a></li>
                     <li><a href="{{ url_for('contact') }}">{% trans %}Contact{% endtrans %}</a></li>
                 </ul>
@@ -66,49 +65,19 @@
     <section id="about" class="vertical-align">
         <div class="container">
             <div class="jumbotron text-center">
-                <h1>We are the team of developers, tech-enthusiasts and investors.</h1>
-                <p>We invite enterprising people who need support in launching their business project. From us -
-                    training, consulting, support and investment for the most promising
-                    projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy, and a
-                    willingness to follow through.</p>
-                <div class="hr">
-                    <hr>
-                    <img src="{{ url_for('static', filename='assets/images/rocket.png') }}">
-                </div>
+                <h1>We are the team of developers, tech-enthusiasts and investors, we change the world.</h1>
+                <p>Even one man in the field is a force.</p>
             </div>
         </div>
     </section>
 
-    <!--Section What we do-->
-    <section id="what-we-do" class="vertical-align">
+
+    <!--Section About-->
+    <section id="how_we_work" class="vertical-align">
         <div class="container">
-            <h1 class="text-center advantages-title">What we do</h1>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-xs-6 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-dev.png') }}">
-                    <h4>{% trans %}Help in developing we have own opensource/outstaff/outsource company in Belarus{%
-                        endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-training.png') }}">
-                    <h4>{% trans %}Counseling and training{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-invest.png') }}">
-                    <h4>{% trans %}Investment of funds{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-legal-aid.png') }}">
-                    <h4>{% trans %}Legal aid{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-business.png') }}">
-                    <h4>{% trans %}Help in business matters{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-start.png') }}">
-                    <h4>{% trans %}Help in starting and maintenance{% endtrans %}</h4>
-                </div>
+            <div class="jumbotron text-center">
+                <h1>How we work?</h1>
+                <p>Just Do It.</p>
             </div>
         </div>
     </section>
@@ -118,23 +87,8 @@
         <div class="container">
             <div class="jumbotron text-center">
                 <h1>Our clients</h1>
-                <p>We do not charge for our help. If you have an interesting project and want to show it to the world,
-                    and you are ready hard working, we are
-                    glad to invite you</p>
-                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Become our client{% endtrans %}</a>
-            </div>
-        </div>
-    </section>
-
-    <!--Section Partners-->
-    <section id="partners" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>Our partners</h1>
-                <p>We do not charge for our help. If you have an interesting project and want to show it to the world,
-                    and you are ready hard working, we are
-                    glad to invite you</p>
-                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Become our partners{% endtrans %}</a>
+                <p>We work with largest companies in the world.</p>
+                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Become our Client{% endtrans %}</a>
             </div>
         </div>
     </section>
@@ -148,6 +102,23 @@
                 <h3><b>Topilski Alexandr</b></h3>
                 <p class="post"><i>CEO and Founder</i></p>
                 <p>C/C++ Tech Lead developer, creator of FastoRedis/FastoNoSQL applications.</p>
+                <p>
+                    <a href="https://github.com/topilski">
+                        <img src="{{ url_for('static', filename='assets/images/github.png') }}">
+                    </a>
+                    <a href="https://www.linkedin.com/in/topilski">
+                        <img src="{{ url_for('static', filename='assets/images/linkedin.png') }}">
+                    </a>
+                    <a href="https://www.facebook.com/sasha.topilski">
+                        <img src="{{ url_for('static', filename='assets/images/facebook.png') }}">
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='assets/images/team.jpg') }}" alt="Image">
+                <h3><b>Team</b></h3>
+                <p class="post"><i>10+ Best developers</i></p>
+                <p>C/C++/Python/Java/Javascript/HTML/SAP/Android/IOS developers.</p>
             </div>
         </div>
     </section>

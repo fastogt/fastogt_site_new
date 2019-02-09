@@ -166,6 +166,11 @@ hr {
     top: -46px;
 }
 
+#team {
+    background-color: rgb(247, 247, 247);
+    color: rgb(75, 75, 75);
+}
+
 #team p {
     font-size: 18px;
     line-height: 27px;
@@ -187,8 +192,4 @@ hr {
     width: 32px;
     height: 32px;
     border-radius: 100%;
-}
-
-#team {
-    color: rgb(75, 75, 75);
 }

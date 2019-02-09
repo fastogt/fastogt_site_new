@@ -152,6 +152,11 @@ section {
     color: green;
 }
 
+.jumbotron p {
+    font-size: 23px;
+    color: red;
+}
+
 hr {
     border-top: 1px solid rgb(220, 220, 220);
 }
@@ -163,14 +168,6 @@ hr {
 
 #what-we-do, #team {
     background-color: rgb(247, 247, 247);
-}
-
-#participate {
-    background: url(../images/bg-section-participate.png) no-repeat 5% 100% scroll;
-}
-
-#participate .btn {
-    padding: 17px 70px !important;
 }
 
 #team p {
@@ -194,13 +191,4 @@ hr {
     width: 32px;
     height: 32px;
     border-radius: 100%;
-}
-
-#advantages, #what-we-do, #team {
-    color: rgb(75, 75, 75);
-}
-
-.advantages-title {
-    margin-top: 50px;
-    margin-bottom: 50px;
 }

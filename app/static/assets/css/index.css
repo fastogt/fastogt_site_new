@@ -97,8 +97,23 @@ section {
 / / min-height: 600 px;
 }
 
-#about-main {
-    background: url(../images/bg-section-main.jpg) no-repeat top center scroll;
+#main {
+    background: url(../images/main.jpg) no-repeat top center scroll;
+    background-size: cover;
+}
+
+#about {
+    background: url(../images/about.jpg) no-repeat top center scroll;
+    background-size: cover;
+}
+
+#clients {
+    background: url(../images/clients.jpg) no-repeat top center scroll;
+    background-size: cover;
+}
+
+#how_we_work {
+    background: url(../images/how_we_work.jpg) no-repeat top center scroll;
     background-size: cover;
 }
 

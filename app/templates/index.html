@@ -51,7 +51,7 @@
 
 <main>
     <!--Section About-->
-    <section id="about-main" class="vertical-align">
+    <section id="main" class="vertical-align">
         <div class="container">
             <div class="jumbotron text-center">
                 <h1>We believe in our founders</h1>
@@ -97,7 +97,7 @@
     <section id="team" class="vertical-align text-center">
         <div class="container">
             <h1>Our team</h1>
-            <div class="text-center">
+            <div class="col-md-6">
                 <img src="{{ url_for('static', filename='assets/images/ceo.jpg') }}" alt="Image">
                 <h3><b>Topilski Alexandr</b></h3>
                 <p class="post"><i>CEO and Founder</i></p>
@@ -114,11 +114,12 @@
                     </a>
                 </p>
             </div>
-            <div class="text-center">
+            <div class="col-md-6">
                 <img src="{{ url_for('static', filename='assets/images/team.jpg') }}" alt="Image">
                 <h3><b>Team</b></h3>
                 <p class="post"><i>10+ Best developers</i></p>
                 <p>C/C++/Python/Java/Javascript/HTML/SAP/Android/IOS developers.</p>
+                <a href="{{ config['PUBLIC_CONFIG'].company.domain }}" class="btn btn-success btn-xs" >Let's start work!</a>
             </div>
         </div>
     </section>

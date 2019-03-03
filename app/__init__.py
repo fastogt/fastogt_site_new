@@ -14,6 +14,10 @@ bootstrap = Bootstrap(app)
 babel = Babel(app)
 mail = Mail(app)
 
+from app.home import home as home_blueprint
+
+app.register_blueprint(home_blueprint)
+
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')
 @app.route('/googlee08bc4f482dc3039.html')

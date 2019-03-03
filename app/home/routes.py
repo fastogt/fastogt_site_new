@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 
-from app import app, login_manager, mail, babel
+from app import app, mail, babel
 import app.utils as utils
 from app.home import home
 import app.constants as constants
@@ -36,11 +36,6 @@ def send_email(email: str, subject: str, message: str):
 
 
 # routes
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.objects(pk=user_id).first()
-
 
 @home.route('/', methods=['POST', 'GET'])
 def start():

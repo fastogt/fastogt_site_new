@@ -1,5 +1,4 @@
 from flask import Flask, request, send_from_directory
-from flask_mongoengine import MongoEngine
 from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
@@ -14,7 +13,6 @@ app.config.from_pyfile('config.py', silent=True)
 # modules
 bootstrap = Bootstrap(app)
 babel = Babel(app)
-db = MongoEngine(app)
 mail = Mail(app)
 
 login_manager = LoginManager(app)

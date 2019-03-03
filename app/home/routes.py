@@ -1,5 +1,4 @@
 from flask import render_template, request, redirect, url_for, flash, session
-from flask_login import login_user, current_user
 from flask_mail import Message
 from flask_babel import gettext
 
@@ -68,55 +67,6 @@ def set_language(language=constants.DEFAULT_LOCALE):
     return redirect(url_for('home.start'))
 
 
-@home.route('/confirm_email/<token>')
-def confirm_email(token):
-    try:
-        email = confirm_link_generator.loads(token, salt=SALT_LINK, max_age=CONFIRM_LINK_TTL)
-        confirm_user = User.objects(email=email).first()
-        if confirm_user:
-            confirm_user.status = User.Status.ACTIVE
-            confirm_user.save()
-            login_user(confirm_user)
-            return redirect(url_for('home.login'))
-        else:
-            return '<h1>We can\'t find user.</h1>'
-    except SignatureExpired:
-        return '<h1>The token is expired!</h1>'
-
-
-def post_login(form: SigninForm):
-    if not form.validate_on_submit():
-        return render_template('home/login.html', form=form)
-
-    check_user = User.objects(email=form.email.data).first()
-    if not check_user:
-        flash_error(gettext(u'User not found.'))
-        return render_template('home/login.html', form=form)
-
-    if check_user.status == User.Status.NO_ACTIVE:
-        flash_error(gettext(u'User not active.'))
-        return render_template('home/login.html', form=form)
-
-    if not check_password_hash(check_user['password'], form.password.data):
-        flash_error(gettext(u'Invalid password.'))
-        return render_template('home/login.html', form=form)
-
-    login_user(check_user)
-    return redirect(url_for('user.dashboard'))
-
-
-@home.route('/login', methods=['POST', 'GET'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('user.dashboard'))
-
-    form = SigninForm()
-    if request.method == 'POST':
-        return post_login(form)
-
-    return render_template('home/login.html', form=form)
-
-
 @home.route('/private_policy')
 def private_policy():
     config = app.config['PUBLIC_CONFIG']
@@ -131,48 +81,8 @@ def term_of_use():
                            title=config['site']['title'])
 
 
-@home.route('/register', methods=['GET', 'POST'])
-def register():
-    form = SignupForm()
-    if request.method == 'POST':
-        if not form.validate_on_submit():
-            return render_template('home/register.html', form=form)
-
-        email = form.email.data
-        if not utils.is_valid_email(email, False):
-            flash_error(gettext(u'Invalid email.'))
-            return render_template('home/register.html', form=form)
-
-        existing_user = User.objects(email=email).first()
-        if existing_user:
-            return redirect(url_for('home.login'))
-
-        hash_pass = generate_password_hash(form.password.data, method='sha256')
-        new_user = User(email=email, password=hash_pass)
-        new_user.save()
-
-        token = confirm_link_generator.dumps(email, salt=SALT_LINK)
-
-        confirm_url = url_for('home.confirm_email', token=token, _external=True)
-        config = app.config['PUBLIC_CONFIG']
-        html = render_template('home/email/activate.html', confirm_url=confirm_url,
-                               contact_email=config['support']['contact_email'], title=config['site']['title'],
-                               company=config['company']['title'])
-        msg = Message(subject=gettext(u'Confirm Email'), recipients=[email], html=html)
-        mail.send(msg)
-        flash_success(gettext(u'Please check email: {0}.'.format(email)))
-        return redirect(url_for('home.login'))
-
-    return render_template('home/register.html', form=form)
-
-
 @babel.localeselector
 def get_locale():
-    # if a user is logged in, use the locale from the user settings
-    if current_user and current_user.is_authenticated:
-        lc = current_user.settings.locale
-        return lc
-
     if session.get('language'):
         lang = session['language']
         return lang

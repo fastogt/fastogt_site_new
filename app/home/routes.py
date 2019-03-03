@@ -11,7 +11,6 @@ from app import app, login_manager, mail, babel
 import app.utils as utils
 from app.home import home
 import app.constants as constants
-from app.home.user_loging_manager import User
 
 from .forms import SignupForm, SigninForm, ContactForm
 

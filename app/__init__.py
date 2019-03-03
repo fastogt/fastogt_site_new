@@ -1,5 +1,4 @@
 from flask import Flask, request, send_from_directory
-from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_babel import Babel
@@ -14,20 +13,6 @@ app.config.from_pyfile('config.py', silent=True)
 bootstrap = Bootstrap(app)
 babel = Babel(app)
 mail = Mail(app)
-
-login_manager = LoginManager(app)
-
-# blueprints
-from app.home import home as home_blueprint
-
-app.register_blueprint(home_blueprint)
-
-from app.user import user as user_blueprint
-
-app.register_blueprint(user_blueprint, url_prefix='/user')
-
-login_manager.login_view = "home.login"
-
 
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')

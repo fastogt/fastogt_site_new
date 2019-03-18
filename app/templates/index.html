@@ -55,6 +55,7 @@
         <div class="container">
             <div class="jumbotron text-center">
                 <h1>We believe in our team.</h1>
+                <hr class="divider">
                 <p class="about-description">We help to develop, advise and invest in the most promising projects.
                     If you have cool ideas - you are welcome!</p>
             </div>
@@ -65,7 +66,8 @@
     <section id="about" class="vertical-align">
         <div class="container">
             <div class="jumbotron text-center">
-                <h1>We are the team of developers, tech-enthusiasts and investors, we change the world.</h1>
+                <h2>We are the team of developers, tech-enthusiasts and investors, we change the world.</h2>
+                <hr class="divider">
                 <p>Even one man in the field is a force.</p>
             </div>
         </div>
@@ -77,20 +79,24 @@
         <div class="container">
             <div class="jumbotron text-center">
                 <h1>How we work?</h1>
+                <hr class="divider">
                 <p>Just Do It.</p>
             </div>
         </div>
     </section>
 
     <!--Section Clients-->
-    <section id="clients" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>Our clients:</h1>
-                <p>We work with largest companies in the world.</p>
+    <div class="bg-box">
+        <section id="clients" class="vertical-align">
+            <div class="container">
+                <div class="jumbotron text-center">
+                    <h1>Our clients:</h1>
+                    <hr class="divider">
+                    <p>We work with largest companies in the world.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!--Section Team-->
     <section id="team" class="vertical-align text-center">
@@ -129,7 +135,8 @@
         <div class="text-center jumbotron">
             <p1 class="keep-left">Address: {{config['PUBLIC_CONFIG'].support.contact_address }}</p1>
             <p1 class="keep-left">Copyright © 2014-2018 <a
-                    href="{{ config['PUBLIC_CONFIG'].company.domain }}">FastoGT</a>. All rights reserved.</p1>
+                    href="{{ config['PUBLIC_CONFIG'].company.domain }}">FastoGT</a>. All rights reserved.
+            </p1>
             <p1> Website development -
                 <a href="/">
                     <img src="{{ url_for('static', filename='assets/images/fastogt.png') }}">

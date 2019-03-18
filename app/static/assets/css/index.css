@@ -5,8 +5,8 @@ body {
 }
 
 .navbar {
-    padding: 13px 0 11px;
-    font-size: 20px !important;
+    padding: 6px 0 5px;
+    font-size: 16px !important;
     letter-spacing: 1.2px;
     background-color: rgba(61, 97, 155, 0.9) !important;
 }
@@ -92,28 +92,76 @@ body {
     border-radius: 0 !important;
 }
 
+.jumbotron {
+    color: rgb(75, 75, 75);
+    background-color: inherit !important;
+}
+
+.jumbotron h1 {
+    font-size: 53px;
+    color: white;
+}
+
+.jumbotron h2 {
+    font-size: 46px;
+}
+
+.jumbotron p {
+    font-size: 23px;
+    color: #efefef;
+}
+
+.jumbotron p1 {
+    font-size: 23px;
+}
+
+.divider {
+    max-width: 60px;
+    margin: 30px auto 25px;
+    border-top: 3px solid #bbf04a !important;
+}
+
 section {
     min-height: 100vh;
-/ / min-height: 600 px;
 }
 
 #main {
-    background: url(../images/main.jpg) no-repeat top center scroll;
+    background: url(../images/main1.jpg) no-repeat top center scroll;
     background-size: cover;
 }
 
 #about {
-    background: url(../images/about.jpg) no-repeat top center scroll;
+    min-height: 700px !important;
+}
+
+#about h2, #about p {
+    color: #111369;
+}
+
+#about .divider, #clients .divider {
+    border-top: 3px solid blue !important;
+}
+
+.bg-box {
+    background: url(../images/clients1.jpg) no-repeat top center scroll;
     background-size: cover;
 }
 
 #clients {
-    background: url(../images/clients.jpg) no-repeat top center scroll;
-    background-size: cover;
+    min-height: 700px !important;
+}
+
+#clients {
+    background-color: #ffffff;
+    opacity: 0.6;
+}
+
+#clients h1, #clients p {
+    color: black;
 }
 
 #how_we_work {
-    background: url(../images/how_we_work.jpg) no-repeat top center scroll;
+    background: url(../images/how_we_work1.jpg) no-repeat top center scroll;
     background-size: cover;
 }
 
@@ -140,25 +188,6 @@ section {
 .conditions a:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
     text-decoration: none;
-}
-
-.jumbotron {
-    color: rgb(75, 75, 75);
-    background-color: inherit !important;
-}
-
-.jumbotron h1 {
-    font-size: 53px;
-    color: green;
-}
-
-.jumbotron p {
-    font-size: 23px;
-    color: red;
-}
-
-.jumbotron p1 {
-    font-size: 23px;
 }
 
 hr {

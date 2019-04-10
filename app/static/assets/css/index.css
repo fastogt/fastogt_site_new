@@ -120,6 +120,10 @@ body {
     font-size: 23px;
 }
 
+.jumbotron a {
+    color: hotpink;
+}
+
 .divider {
     max-width: 60px;
     margin: 30px auto 25px;

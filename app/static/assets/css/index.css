@@ -106,11 +106,6 @@ body {
     font-size: 46px;
 }
 
-.jumbotron li {
-    font-size: 23px;
-    color: #efefef;
-}
-
 .jumbotron p {
     font-size: 23px;
     color: #efefef;
@@ -118,10 +113,6 @@ body {
 
 .jumbotron p1 {
     font-size: 23px;
-}
-
-.jumbotron a {
-    color: hotpink;
 }
 
 .divider {
@@ -137,6 +128,15 @@ section {
 #main {
     background: url(../images/main1.jpg) no-repeat top center scroll;
     background-size: cover;
+}
+
+#main a {
+    color: hotpink;
+}
+
+#main li {
+    font-size: 23px;
+    color: #efefef;
 }
 
 #about {

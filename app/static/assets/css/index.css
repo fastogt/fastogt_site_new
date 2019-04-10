@@ -134,7 +134,7 @@ section {
     min-height: 700px !important;
 }
 
-#about h2, #about p {
+#about h2, #about ul, #about li {
     color: #111369;
 }
 
